@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-function Activities(props) {
+function Progress(props) {
   const [Clickstate, setClick]=useState(null)
 
 
@@ -25,10 +25,7 @@ const   handle = (index)=>{
   setClick(index)
 }
 
-const NextHandeler =()=>{
-  const next = "/"
-}
-  return (
+return (
     <>
 
      <section className='w-full'>
@@ -40,9 +37,9 @@ const NextHandeler =()=>{
 
       {/* card section */}
 
-      <div className='md:flex justify-around items-center gap-2 w-[80%] mx-auto py-10 px-2'>
+      <div className='md:flex justify-around items-center gap-2  w-[80%] mx-auto py-10 px-2'>
         {victorImg.map((event,index)=>(
-             <div onClick={()=> handle(index)} key={index} className={`  min-h-[300px] py-10 px-5 bg-[#E4E4E7] rounded-2xl  ${Clickstate===index ?  " border-2 border-black":"bg-[#E4E4E7]"}`}>
+             <div onClick={()=> handle(index)} key={index} className={`  min-h-[300px] mt-3 py-10 px-5 bg-[#E4E4E7] rounded-2xl  ${Clickstate===index ?  " border-2 border-black":"bg-[#E4E4E7]"}`}>
               <img className='w-[10%] py-5' src={event.img} alt="" />
               <h1 className='font-bold text-2xl  py-5'>{event.heading}</h1>
               <p className='text-[#71717A]'>{event.pera}</p>
@@ -59,4 +56,4 @@ const NextHandeler =()=>{
   )
 }
 
-export default Activities
+export default Progress

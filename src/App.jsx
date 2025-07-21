@@ -7,6 +7,10 @@ import Incidents from './Compunents/Incidents'
 import Activities from './Compunents/Activities'
 import Documents from './Compunents/Documents'
 import Cypher from './Compunents/Cypher'
+import Progress from './Compunents/Progress'
+import NewIncident from './Compunents/NewIncident' 
+import NewIncident2 from './Compunents/NewIncident2'
+import Finished from './Compunents/Finished'
 function App() {
 
     const card = [
@@ -61,6 +65,11 @@ function App() {
     <Route path='/Activities' element={< Activities />} />
     <Route path='/Documents' element={< Documents />} />
     <Route path='/Cypher' element={< Cypher />} />
+    <Route path='/Progress' element={< Progress />} />
+    <Route path='/NewIncident' element={< NewIncident />} />
+    <Route path='/NewIncident2' element={< NewIncident2 />} />
+    <Route path='/Finished' element={< Finished />} />
+
     
     
 
