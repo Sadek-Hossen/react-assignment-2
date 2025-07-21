@@ -34,7 +34,16 @@ function Documents() {
       
 
 
-  
+      </div>
+        <div className='grid md:grid-cols-3 gap-4'>
+          <img src="img/finis2.png" alt="finis " />
+          <img src="img/finis1.png" alt="finis" />
+          <img src="img/finis2.png" alt="finis" />
+          <img src="img/finis2.png" alt="finis" />
+           
+
+        </div>
+      </div>
 
       <div className='md:w-1/2 mx-auto flex max-h-[400px] py-10'>
         <img  src="img/location2.png" alt="" />
