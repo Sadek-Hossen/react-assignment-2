@@ -4,6 +4,22 @@ import CollectionsIcon from '@mui/icons-material/Collections';
 import FilePresentIcon from '@mui/icons-material/FilePresent';
 
 function Dashboard({card}) {
+    
+
+    const HandelClick = ()=>{
+      const chat = document.getElementById("chat");
+      const remove = document.getElementById("remove");
+      const cBtn = document.getElementById("cBtn");
+      chat.style.display="flex";
+      remove.style.display="flex";
+      cBtn.style.display="none";
+    } 
+    const XhandelClick= ()=>{
+      const chat = document.getElementById("chat");
+      const cBtn = document.getElementById("cBtn");
+      chat.style.display="none"
+      cBtn.style.display="flex"
+    }
   return (
     <>
       <div className='grid md:grid-cols-4 z-0 sm:grid-cols-2 grid-cols-1 gap-4 w-[80%] mx-auto'>
@@ -21,21 +37,24 @@ function Dashboard({card}) {
       </div>
 
     {/* chat icon */}
-<div className="fixed bottom-5 right-5 z-50">
-  <button className="bg-[#F26922] px-4 py-3 text-2xl hover:scale-105 transition-all cursor-pointer rounded-full opacity-90 hover:opacity-100 text-white font-bold">
+<div  className="fixed bottom-5 right-5 z-50">
+
+{/* C button */}
+  <button id='cBtn' onClick={HandelClick} className="flex bg-[#F26922] px-4 py-3 text-2xl hover:scale-105 transition-all cursor-pointer rounded-full opacity-90 hover:opacity-100 text-white font-bold">
     C
   </button>
 </div>
 
-{/* chat box */}
-<div className='hidden'>
+
+
+{/* chat box  start*/}
+
+
+
+<div id='chat' className='hidden flex-col   -mt-[500px]  z-50 '>
     
-<div className="fixed bottom-6 right-6 z-50">
-  <button className="bg-[#F26922] px-4 py-3 text-2xl hover:scale-105 transition-all cursor-pointer rounded-full opacity-90 hover:opacity-100 text-white font-bold">
-    X
-  </button>
-</div>
-<div className='bg-[#F4F4F5] flex flex-col mb-[200px] rounded-2xl ml-[60%] right-5 md:w-[30%] w-[80%]'>
+
+<div className='bg-[#F4F4F5] flex flex-col t-0 mb-[200px] rounded-2xl mx-auto md:ml-[60%] right-5 md:w-[30%] w-[80%]'>
 
     <div className='bg-[#F26922] rounded-t-3xl px-3 py-4 w-full'>
         <h1 className=' font-bold text-white text-2xl px-4 py-5'>Chat with Cypher</h1>
@@ -67,6 +86,14 @@ function Dashboard({card}) {
      </div>
     </div>
     
+</div>
+
+{/* x button */}
+
+ <div className=" md:ml-[85%] -mt-[200px]">
+  <button  id='remove' onClick={XhandelClick} className=" hidden bg-[#d1cfcec5] px-4 py-3 text-2xl hover:scale-105 transition-all cursor-pointer rounded-full opacity-90 hover:opacity-100 text-black font-bold">
+    X
+  </button>
 </div>
 </div>
 

@@ -57,10 +57,10 @@ function App() {
 
 
     <Route path="/" element={< Dashboard card={card} />} />        
-    <Route path='/Compunents/Incidents' element={< Incidents />} />
-    <Route path='/Compunents/Activities' element={< Activities />} />
-    <Route path='/Compunents/Documents' element={< Documents />} />
-    <Route path='/Compunents/Cypher' element={< Cypher />} />
+    <Route path='/Incidents' element={< Incidents card={card} />} />
+    <Route path='/Activities' element={< Activities />} />
+    <Route path='/Documents' element={< Documents />} />
+    <Route path='/Cypher' element={< Cypher />} />
     
     
 

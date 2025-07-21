@@ -1,9 +1,25 @@
 import React from 'react';
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate} from "react-router-dom";
+import { useLocation } from 'react-router-dom';
 import CircleNotificationsIcon from '@mui/icons-material/CircleNotifications';
 import SearchIcon from '@mui/icons-material/Search';
 
 function Header() {
+
+  const navigate = useNavigate()
+  const location= useLocation()
+  const IsIncidents = location.pathname=== "/Incidents";
+  const handle= ()=>{
+    if(IsIncidents){
+      navigate("/Activities")
+
+    }
+    else{
+    
+    }
+  }
+
+
   return (
     <>
     <nav className='flex justify-between items-center px-8 max-w-[1440px] mx-auto p-4'>
@@ -20,22 +36,22 @@ function Header() {
         }>
           Dashboard
         </NavLink>
-        <NavLink to="/Compunents/Incidents" className={({ isActive }) =>
+        <NavLink to="/Incidents" className={({ isActive }) =>
           isActive ? "font-bold border-b-2 border-black" : "text-gray-500"
         }>
           Incidents
         </NavLink>
-        <NavLink to="/Compunents/Activities" className={({ isActive }) =>
+        <NavLink to="/Activities" className={({ isActive }) =>
           isActive ? "font-bold border-b-2 border-black" : "text-gray-500"
         }>
           Activities
         </NavLink>
-        <NavLink to="/Compunents/Documents" className={({ isActive }) =>
+        <NavLink to="/Documents" className={({ isActive }) =>
           isActive ? "font-bold border-b-2 border-black" : "text-gray-500"
         }>
           Documents
         </NavLink>
-        <NavLink to="/Compunents/Cypher" className={({ isActive }) =>
+        <NavLink to="/Cypher" className={({ isActive }) =>
           isActive ? "font-bold border-b-2 border-black" : "text-gray-500"
         }>
           Cypher AI
@@ -56,7 +72,8 @@ function Header() {
     <hr className='hidden md:flex'/>
 
     {/* bottom section  in navbur*/}
-<div  className="hidden md:flex  justify-between items-center max-w-[1440px] mx-auto p-4 px-5">
+<div className={`${ IsIncidents ? "flex" : "hidden"} 
+         md:flex justify-between items-center max-w-[1440px] mx-auto p-4 px-5`}>
   <div>
      <div>
       <p className='text-gray-500'>Welcome back</p>
@@ -66,9 +83,12 @@ function Header() {
 
 
   <div className=''>
-    <div className="flex justify-between items-center gap-3">  <div  className="py-3 px-[10px] bg-[#FAFAFA]  rounded-[6px] "> <SearchIcon /> <input className="  border-none outline-none" type="text" placeholder='Search Identiti' /> </div> 
-    <button className="py-3 px-[10px] bg-[#FAFAFA]  rounded-[6px] ">Sort By: Date modified</button>
-    <button className ="py-2 px-6 rounded-2xl text-white bg-[#F26922] opacity-80 hover:opacity-100 transition-all duration-200 ">Cypher AI</button>
+    <div id='searchBtn' className={`flex justify-between items-center gap-3`}> 
+    
+       <div  className={` ${IsIncidents ? "hidden" : "flex"} md:flex py-3 px-[10px] bg-[#FAFAFA]  rounded-[6px] `}> <SearchIcon /> <input className="  border-none outline-none" type="text" placeholder='Search Identiti' />
+        </div> 
+    <button className={`${IsIncidents ? "hidden" : "flex"} md:flex py-3 px-[10px] bg-[#FAFAFA]  rounded-[6px]`}>Sort By: Date modified</button>
+    <button onClick={handle}  className ="py-2 px-6 rounded-2xl text-white bg-[#F26922] opacity-80 hover:opacity-100 transition-all duration-200 "> {IsIncidents ? "+ New Incident " : "Cypher AI" } </button>
     
     </div>
   </div>
