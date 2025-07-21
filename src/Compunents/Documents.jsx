@@ -31,12 +31,12 @@ function Documents() {
       <div className='flex justify-between items-center'>
         <h1 className='font-bold '>Locations</h1>
         <p className='text-gray-500'>See all</p>
+      
 
 
-      </div>
-      </div>
+  
 
-      <div className='md:w-1/2 mx-auto flex items-center py-10'>
+      <div className='md:w-1/2 mx-auto flex max-h-[400px] py-10'>
         <img  src="img/location2.png" alt="" />
       </div>
 
